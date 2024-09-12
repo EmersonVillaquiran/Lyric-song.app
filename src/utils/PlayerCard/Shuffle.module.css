@@ -1,0 +1,16 @@
+.shuffle {
+  width: 1.5em;
+  width: 1.5em;
+  transition: transform 0.2s;
+}
+
+.shuffle:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 600px) {
+  .shuffle {
+    display: none;
+  }
+}
