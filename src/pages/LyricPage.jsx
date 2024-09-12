@@ -34,7 +34,7 @@ const LyricPage = () => {
 
   return (
     <div className="h-screen dark">
-      <div className="shadow-slate-500 shadow-xl mb-5 flex justify-between h-[150px] p-3">
+      <div className="shadow-slate-500 shadow-xl mb-5 flex justify-between h-[150px] p-5">
         <TittleOfPage/>
         <UserLogged />
       </div>

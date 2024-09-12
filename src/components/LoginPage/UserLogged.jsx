@@ -45,15 +45,15 @@ const UserLogged = ({}) => {
   };
 
   return (
-    <div className="flex p-8">
-      <h2 className="text-xl pr-2 pt-5">
-        {user?.firstName} {user?.lastName}
-      </h2>
+    <div className="flex">
       <div className="flex flex-col">
-        <Avatar className="w-[3em] h-[3em] ml-3">
+        <Avatar className="ml-[3.5em]">
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
+        <h2 className="text-[1em]">
+          {user?.firstName} {user?.lastName}
+        </h2>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="mt-2" variant="outline">
