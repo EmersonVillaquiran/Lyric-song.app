@@ -11,9 +11,17 @@ import { Input } from "@/components/ui/input";
 import useAuth from "@/hooks/useAuth";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod"
+import formSchema from '@/hooks/formSchema'
+import TittleOfPage from "@/components/LyricPage/TittleOfPage";
+
 
 const RegisterPage = () => {
+
+
+
   const form = useForm({
+		resolver: zodResolver(formSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -35,13 +43,13 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="w-full h-[800px] flex place-content-center items-center ">
+    <div className="w-full bg-[#143c8d4e] h-screen flex place-content-center items-center ">
       <Form {...form}>
         <form
-          className="max-w-[400px] w-full shadow-lg shadow-[#787a7e92] p-5 rounded-lg grid relative gap-6 border-[0.1em] border-white"
+          className="max-w-[400px] max-h-[550px] bg-[#c7c7c992] w-full h-full shadow-sm shadow-[#9ea0a492] p-5 rounded-lg grid relative gap-3 "
           onSubmit={form.handleSubmit(onSubmit)}
         >
-          <h2 className="text-center text-[1.5em]">Register</h2>
+          <h2 className="text-center text-[1.5em]">Register <span className="text-[0.35em]"><TittleOfPage/></span></h2>
           <FormField
             control={form.control}
             name="firstName"
@@ -113,7 +121,7 @@ const RegisterPage = () => {
               </FormItem>
             )}
           />
-          <Button className="mt-5" type="submit">
+          <Button className="mt-5 text-white bg-[#3f42eced]" type="submit" >
             Submit
           </Button>
         </form>
