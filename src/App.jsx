@@ -5,7 +5,6 @@ import LyricPage from "./pages/LyricPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoutes from "./pages/ProtectedRoutes";
 import VerifyEmail from "./pages/VerifyEmail";
-import LoginWithAuth0 from "./pages/LoginWithAuth0";
 
 function App() {
   return (
