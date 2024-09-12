@@ -17,7 +17,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import formSongSchema from "@/hooks/formSongSchema";
 import getConfigToken from "@/utils/getConfigToken";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -32,6 +34,7 @@ export default function Home({
   users,
 }) {
   const form = useForm({
+    resolver: zodResolver(formSongSchema),
     defaultValues: {
       artist: "",
       name: "",
@@ -97,13 +100,13 @@ export default function Home({
   };
 
   return (
-    <Dialog className="grid" open={isOpenForm} onOpenChange={handleOpenChange}>
+    <Dialog  open={isOpenForm} onOpenChange={handleOpenChange}>
       <div className="text-center">
         <DialogTrigger className="bg-[var(--tagsBackground)] border-[0.1em] rounded-md p-2 font-medium">
           <h3>Add Song</h3>
         </DialogTrigger>
       </div>
-      <DialogContent className="max-w-[425px] max-h-[550px] w-full h-full grid gap-6">
+      <DialogContent className="max-w-[425px] w-full grid">
         <DialogHeader>
           <DialogTitle className="text-center">Add Song</DialogTitle>
           <DialogDescription></DialogDescription>

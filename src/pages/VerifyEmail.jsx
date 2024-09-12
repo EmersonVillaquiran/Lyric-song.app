@@ -11,7 +11,7 @@ const VerifyEmail = () => {
   console.log(isVerified);
 
   useEffect(() => {
-    const url = `http://localhost:8080/users/verify/${code}`;
+    const url = `https://lyrics-backed-app.onrender.com/users/verify/${code}`;
     axios
       .get(url)
       .then(() => {

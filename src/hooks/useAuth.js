@@ -9,7 +9,7 @@ const useAuth = () => {
   const registerUser = (data) => {
     const frontBaseUrl = `${location.protocol}//${location.host}/#/users/verify`;
     const body = { ...data, frontBaseUrl };
-    const url = "http://localhost:8080/users";
+    const url = "https://lyrics-backed-app.onrender.com/users";
     axios
       .post(url, body)
       .then((res) => {
@@ -25,7 +25,7 @@ const useAuth = () => {
     }
   //Login
   const loginUser = (data) => {
-    const url = "http://localhost:8080/users/login";
+    const url = "https://lyrics-backed-app.onrender.com/users/login";
     axios
       .post(url, data)
       .then((res) => {
@@ -35,7 +35,11 @@ const useAuth = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Created an account",
+        });
         localStorage.removeItem("token");
         localStorage.removeItem("user");
       });
